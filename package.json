@@ -1,15 +1,23 @@
 {
   "name": "app",
   "version": "1.0.50",
+  "type": "module",
+  "module": "src/index.tsx",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "bun run --watch src/index.ts"
+    "dev": "bun run --watch src/index.tsx",
+    "db:push": "bunx drizzle-kit push:sqlite",
+    "db:studio": "bunx drizzle-kit studio"
   },
   "dependencies": {
+    "@elysiajs/html": "^0.8.0",
+    "@libsql/client": "^0.4.0",
+    "drizzle-orm": "^0.29.3",
     "elysia": "latest"
   },
   "devDependencies": {
-    "bun-types": "latest"
-  },
-  "module": "src/index.js"
+    "@flydotio/dockerfile": "latest",
+    "bun-types": "latest",
+    "drizzle-kit": "^0.20.13",
+    "typed-html": "^3.0.1"
+  }
 }
